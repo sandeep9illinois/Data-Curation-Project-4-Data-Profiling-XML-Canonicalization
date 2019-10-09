@@ -1,0 +1,8 @@
+
+KEY ASSUMPTION:
+
+CompanyName is declared as a PCDATA element in all the 3 DTDs being shared here.
+This is with the assumption that '&' in the company names will be replaced with
+'&amp;' in the XML records, prior to validation against the DTD to ensure successful XML parsing.
+
+Validation against DTDs will be successful only if the above assumption is correct.

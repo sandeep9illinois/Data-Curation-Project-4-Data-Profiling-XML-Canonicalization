@@ -1,0 +1,38 @@
+<!DOCTYPE consumerComplaints[
+<!ELEMENT consumerComplaints (complaint)+>
+
+<!ELEMENT complaint ((event+, product, issue, consumerNarrative?, company,submitted?, response) |
+(company,submitted?, event, issue, consumerNarrative?, product, event ,response))>
+<!ATTLIST complaint id NMTOKEN #REQUIRED>
+<!ATTLIST complaint submissionType (Web|Referral|Phone) #IMPLIED>
+
+<!ELEMENT event EMPTY>
+<!ATTLIST event
+  date NMTOKEN #REQUIRED
+  type (received|sentToCompany) #REQUIRED>
+
+<!ELEMENT product (productType,subproduct?)>
+<!ELEMENT productType (#PCDATA)>
+<!ELEMENT subproduct (#PCDATA)>
+
+<!ELEMENT issue (issueType,subissue?)>
+<!ELEMENT issueType (#PCDATA)>
+<!ELEMENT subissue (#PCDATA)>
+
+<!ELEMENT consumerNarrative (#PCDATA)>
+
+<!ELEMENT company (companyName,companyState,companyZip)>
+<!ELEMENT companyName (#PCDATA)>
+<!ELEMENT companyState (#PCDATA)>
+<!ELEMENT companyZip (#PCDATA)>
+
+<!ELEMENT submitted EMPTY>
+
+<!ELEMENT response (publicResponse?,responseType)>
+<!ELEMENT publicResponse (#PCDATA)>
+<!ELEMENT responseType (#PCDATA)>
+<!ATTLIST response
+  consumerDisputed (Y|N) #REQUIRED
+  timely (yes|no) #IMPLIED>
+
+]>
